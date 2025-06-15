@@ -42,6 +42,7 @@
                 showMessage(JSON.parse(message.body));
             });
         });
+    }
 
         function showMessage(message){
             var chat = document.getElementById('chat');
@@ -62,7 +63,7 @@
             stompClient.send("app/sendMessage", {}, JSON.stringify(chatMessage));
             document.getElementById('messageInput').value = '';
         }
-    }
+    
     document.getElementById('sendMessage').onclick = sendMessage;
     window.onload = connect;
 </script>
